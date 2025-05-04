@@ -87,7 +87,6 @@ const AnimatedText = ({
 };
 
 const Scene = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [windowSize, setWindowSize] = useState({
     width: typeof window !== "undefined" ? window.innerWidth : 0,
     height: typeof window !== "undefined" ? window.innerHeight : 0,
@@ -105,11 +104,6 @@ const Scene = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleMouseMove = (event: React.MouseEvent) => {
-    const { clientX, clientY } = event;
-    setMousePosition({ x: clientX, y: clientY });
-  };
-
   const getTextSize = () => {
     if (windowSize.width < 480) return 0.18; // xs
     if (windowSize.width < 640) return 0.2; // sm
@@ -125,7 +119,7 @@ const Scene = () => {
   };
 
   return (
-    <div className="w-full h-full" onMouseMove={handleMouseMove}>
+    <div className="w-full h-full">
       <Canvas
         camera={{ position: getCameraPosition(), fov: 45 }}
         gl={{ alpha: true, antialias: true }}
@@ -142,7 +136,7 @@ const Scene = () => {
           castShadow
         />
         <Center>
-          <group rotation={[mousePosition.y * 0.05, mousePosition.x * 0.05, 0]} position={[0.1, 0, 0]}>
+          <group position={[0.1, 0, 0]}>
             <AnimatedText position={[0, 0.6, 0]} size={getTextSize()}>
               FULL STACK
             </AnimatedText>
