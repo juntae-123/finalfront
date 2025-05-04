@@ -2,14 +2,13 @@
 
 import { useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { AxiosError } from "axios";
 
 export default function GuestbookForm() {
   const [newMessage, setNewMessage] = useState("");
   const [author, setAuthor] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,10 +31,11 @@ export default function GuestbookForm() {
       } else {
         throw new Error("방명록 작성에 실패했습니다.");
       }
-    } catch (err: any) {
-      console.error("Error submitting message:", err);
+    } catch (err) {
+      const error = err as AxiosError<{ message: string }>;
+      console.error("Error submitting message:", error);
       setError(
-        err.response?.data?.message || "메시지 작성 중 오류가 발생했습니다."
+        error.response?.data?.message || "메시지 작성 중 오류가 발생했습니다."
       );
     } finally {
       setIsSubmitting(false);

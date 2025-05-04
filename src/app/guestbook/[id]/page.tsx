@@ -34,7 +34,8 @@ export default function GuestbookDetail() {
           throw new Error("방명록을 찾을 수 없습니다.");
         }
         setGuestbook(data);
-      } catch (error: any) {
+      } catch (err) {
+        const error = err as Error;
         console.error("Error fetching guestbook:", error);
         setGuestbook(null);
         setError(error?.message || "방명록을 불러오는 중 오류가 발생했습니다.");

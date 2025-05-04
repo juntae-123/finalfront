@@ -10,12 +10,10 @@ import { ThreeEvent } from "@react-three/fiber";
 const AnimatedText = ({
   children,
   position,
-  delay = 0,
   size = 0.4,
 }: {
   children: React.ReactNode;
   position: [number, number, number];
-  delay: number;
   size?: number;
 }) => {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -46,8 +44,6 @@ const AnimatedText = ({
 
   const handlePointerMove = (event: ThreeEvent<PointerEvent>) => {
     const { clientX, clientY } = event;
-    const x = (clientX / window.innerWidth) * 2 - 1;
-    const y = -(clientY / window.innerHeight) * 2 + 1;
 
     if (materialRef.current) {
       gsap.to(materialRef.current.color, {
@@ -114,9 +110,7 @@ const Scene = () => {
 
   const handleMouseMove = (event: React.MouseEvent) => {
     const { clientX, clientY } = event;
-    const x = (clientX / window.innerWidth) * 2 - 1;
-    const y = -(clientY / window.innerHeight) * 2 + 1;
-    setMousePosition({ x, y });
+    setMousePosition({ x: clientX, y: clientY });
   };
 
   const getTextSize = () => {
@@ -152,15 +146,14 @@ const Scene = () => {
         />
         <Center>
           <group rotation={[mousePosition.y * 0.05, mousePosition.x * 0.05, 0]} position={[0.1, 0, 0]}>
-            <AnimatedText position={[0, 0.6, 0]} delay={0} size={getTextSize()}>
+            <AnimatedText position={[0, 0.6, 0]} size={getTextSize()}>
               FULL STACK
             </AnimatedText>
-            <AnimatedText position={[0, 0, 0]} delay={1} size={getTextSize()}>
+            <AnimatedText position={[0, 0, 0]} size={getTextSize()}>
               DEVELOPER
             </AnimatedText>
             <AnimatedText
               position={[0, -0.6, 0]}
-              delay={2}
               size={getTextSize()}
             >
               JUNTAE
