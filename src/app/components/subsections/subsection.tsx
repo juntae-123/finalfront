@@ -1,6 +1,5 @@
 "use client";
-import Link from "next/link";
-import { button } from "framer-motion/client";
+import Image from "next/image";
 
 const Subsection = () => {
   return (
@@ -67,10 +66,11 @@ const Subsection = () => {
                 className="relative group w-[240px] xs:w-[280px] sm:w-[300px] lg:w-[340px] h-[180px] xs:h-[200px] sm:h-[220px] lg:h-[260px] bg-white/80 backdrop-blur-md border border-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-all duration-500"
               >
                 {logo && (
-                  <img
+                  <Image
                     src={logo}
                     alt="logo"
-                    className="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:opacity-0 scale-100 group-hover:scale-110 transition-all duration-500 z-10"
+                    fill
+                    className="object-cover opacity-100 group-hover:opacity-0 scale-100 group-hover:scale-110 transition-all duration-500 z-10"
                     loading="lazy"
                   />
                 )}

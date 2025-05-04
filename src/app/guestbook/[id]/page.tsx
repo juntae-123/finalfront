@@ -57,7 +57,8 @@ export default function GuestbookDetail() {
 
         console.log("Fetched comments:", data);
         setComments(data);
-      } catch (error: any) {
+      } catch (err) {
+        const error = err as Error;
         console.error("Error fetching comments:", error);
         setComments([]);
         setError(error?.message || "댓글을 불러오는 중 오류가 발생했습니다.");

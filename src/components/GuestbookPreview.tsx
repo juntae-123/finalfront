@@ -33,7 +33,7 @@ export default function GuestbookPreview() {
         setMessages([]);
         setError("데이터 형식이 올바르지 않습니다.");
       }
-    } catch (error) {
+    } catch {
       setError("방명록을 불러오는 중 오류가 발생했습니다.");
       setMessages([]);
     }
@@ -43,7 +43,7 @@ export default function GuestbookPreview() {
     try {
       await axios.delete(`http://localhost:3005/guestbook/${id}`);
       fetchMessages();
-    } catch (error) {
+    } catch {
       setError("방명록 삭제 중 오류가 발생했습니다.");
     }
   };

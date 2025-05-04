@@ -43,8 +43,6 @@ const AnimatedText = ({
   });
 
   const handlePointerMove = (event: ThreeEvent<PointerEvent>) => {
-    const { clientX, clientY } = event;
-
     if (materialRef.current) {
       gsap.to(materialRef.current.color, {
         r: hovered ? 0.4 : 1,
