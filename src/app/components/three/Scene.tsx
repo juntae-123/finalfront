@@ -117,9 +117,10 @@ const Scene = () => {
 
   const handleMouseMove = (event: React.MouseEvent) => {
     const { clientX, clientY } = event;
-    const x = (clientX / window.innerWidth) * 2 - 1;
-    const y = -(clientY / window.innerHeight) * 2 + 1;
-    setMousePosition({ x, y });
+    setMousePosition({ 
+      x: (clientX / window.innerWidth) * 2 - 1, 
+      y: -(clientY / window.innerHeight) * 2 + 1 
+    });
   };
 
   const getTextSize = () => {

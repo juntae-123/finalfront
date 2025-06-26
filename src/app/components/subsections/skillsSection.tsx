@@ -11,7 +11,6 @@ import {
   SiJavascript,
   SiHtml5,
   SiCss3,
-  SiSpringboot,
   SiExpress,
   SiSpring,
 } from "react-icons/si";

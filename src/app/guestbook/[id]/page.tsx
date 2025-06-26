@@ -34,10 +34,10 @@ export default function GuestbookDetail() {
           throw new Error("방명록을 찾을 수 없습니다.");
         }
         setGuestbook(data);
-      } catch (error: any) {
+      } catch (error: unknown) {
         console.error("Error fetching guestbook:", error);
         setGuestbook(null);
-        setError(error?.message || "방명록을 불러오는 중 오류가 발생했습니다.");
+        setError(error instanceof Error ? error.message : "방명록을 불러오는 중 오류가 발생했습니다.");
       }
     };
 
@@ -56,10 +56,10 @@ export default function GuestbookDetail() {
 
         console.log("Fetched comments:", data);
         setComments(data);
-      } catch (error: any) {
+      } catch (error: unknown) {
         console.error("Error fetching comments:", error);
         setComments([]);
-        setError(error?.message || "댓글을 불러오는 중 오류가 발생했습니다.");
+        setError(error instanceof Error ? error.message : "댓글을 불러오는 중 오류가 발생했습니다.");
       } finally {
         setLoading(false);
       }
