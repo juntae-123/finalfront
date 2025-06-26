@@ -5,7 +5,6 @@ import { Text3D, Center, Environment } from "@react-three/drei";
 import { useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
-import { ThreeEvent } from "@react-three/fiber";
 
 const AnimatedText = ({
   children,
