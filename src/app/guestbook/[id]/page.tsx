@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { Guestbook } from "@/types/guestbook";
 import { Comment } from "@/types/comment";
-import CommentForm from "@/components/CommentForm";
-import CommentList from "@/components/CommentList";
+import CommentForm from "../../../components/CommentForm";
 import { FaTrash } from "react-icons/fa";
+import CommentList from "../../../components/CommentList";
 
 export default function GuestbookDetail() {
   const params = useParams();

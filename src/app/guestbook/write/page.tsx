@@ -1,6 +1,6 @@
 "use client";
 
-import GuestbookForm from "@/components/GuestbookForm";
+import GuestbookForm from "../../../components/GuestbookForm";
 
 export default function GuestbookWritePage() {
   return (

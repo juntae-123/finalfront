@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import GuestbookPreview from "@/components/GuestbookPreview";
-import GuestbookForm from "@/components/GuestbookForm";
+import GuestbookPreview from "../../components/GuestbookPreview";
+import GuestbookForm from "../../components/GuestbookForm";
 
 export default function GuestbookPage() {
   const [activeTab, setActiveTab] = useState<"view" | "write">("view");
