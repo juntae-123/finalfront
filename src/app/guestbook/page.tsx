@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import GuestbookPreview from "@/components/GuestbookPreview";
+import GuestbookPreview from "../../components/GuestbookPreview";
 import GuestbookForm from "@/components/GuestbookForm";
 
 export default function GuestbookPage() {
