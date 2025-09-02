@@ -16,8 +16,7 @@ const Subsection = () => {
         PROJECT
       </span>
 
-<<<<<<< HEAD
-=======
+
       <div className="absolute top-20 left-1/2 -translate-x-1/2 z-20 pointer-events-auto">
   <a
     href="https://www.notion.so/22cfd7b2457280a7b074cfee42e8bbd6?source=copy_link"
@@ -30,7 +29,7 @@ const Subsection = () => {
   </a>
 </div>
 
->>>>>>> 0dd60ba (포폴수정)
+
       <div className="relative z-10 w-full h-full flex items-center justify-center">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 p-4 sm:p-6 lg:p-10">
           {[...Array(6)].map((_, i) => {
