@@ -1,3 +1,4 @@
+"use client"
 const Header = () => {
   return (
     <header className="w-full px-4 sm:px-6 py-4 relative">
