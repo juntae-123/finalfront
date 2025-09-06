@@ -38,36 +38,36 @@ const Subsection = () => {
             let desc = "준비중";
             let logo = null;
             if (i === 0) {
+              href = "https://chatfront-ochre.vercel.app/";
+              title = "채팅 사이트";
+              desc = "spring boot,java,next.js등을 이용한 채팅 구현";
+              logo =
+                "/logo/images.png";
+            }  
+            if (i === 1) {
               href = "https://whiteclinicfront.vercel.app/";
               title = "화이트클리닉";
               desc = "화이트클리닉";
               logo = "/logo/653bc6e6b18d4.png";
-            }  
-            if (i === 1) {
+            }
+
+            if (i === 2) {
               href = "https://project-twosome2.vercel.app/";
               title = "투썸 프로젝트";
               desc = "투썸 플레이스 클론";
               logo = "/logo/Bi_img_logo.svg.png";
             }
-
-            if (i === 2) {
+            if (i === 3) {
               href = "https://juntae-123.github.io/toss/";
               title = "토스 클론";
               desc = "TOSS 페이지 클론";
               logo = "/logo/EhEElRcoy4v5Y9uyUj3XkTWg.avif";
             }
-            if (i === 3) {
+            if (i === 4) {
               href = "https://khj3535.github.io/airbnb/";
               title = "에어비엔비 클론";
               desc = "airbnb 페이지 클론";
               logo = "/logo/airbnb-logo-logo.png";
-            }
-            if (i === 4) {
-              href = "https://juntae-123.github.io/todolist/";
-              title = "ToDo List";
-              desc = "React를 사용한 할 일 관리 애플리케이션";
-              logo =
-                "/logo/144573050-할-일-목록-템플릿-아이콘입니다-로고-벡터-일러스트-레이-션.jpg";
             }
             if (i === 5) {
               href = "https://khj3535.github.io/team_portfolio/index.html";
